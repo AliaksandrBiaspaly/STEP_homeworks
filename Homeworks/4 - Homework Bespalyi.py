@@ -16,11 +16,11 @@ turtle.forward(150)
 turtle.rt(90)
 turtle.pendown()
 
+
 for i in range(4):
-    turtle.begin_fill()
     turtle.forward(300)
     turtle.right(90)
-    turtle.end_fill()
+
 
 turtle.penup()
 turtle.forward(150)
@@ -49,18 +49,18 @@ turtle.pendown()
 turtle.right(120)
 
 turtle.pen(pencolor="white", fillcolor="blue",  pensize=6, speed=10)
+turtle.begin_fill()
 for i in range(3):
-    turtle.begin_fill()
     turtle.forward(300)
     turtle.right(120)
-    turtle.end_fill()
+turtle.end_fill()
 
 
 turtle.penup()
 turtle.goto(250, 200)
 turtle.pendown()
 
-turtle.pen(pencolor="yellow", pensize=6, speed=10)
+turtle.pen(pencolor="yellow", pensize=6, speed=11)
 for i in range(12):
     turtle.circle(30)
     turtle.right(150)
@@ -71,10 +71,14 @@ turtle.right(60)
 turtle.pendown()
 
 
-turtle.pen(pencolor="green", fillcolor="green",  pensize=8, speed=3)
+turtle.pen(pencolor="white", fillcolor="green",  pensize=6, speed=3)
+
+turtle.begin_fill()
+
 for i in range(3):
     turtle.forward(50)
     turtle.left(120)
+turtle.end_fill()
 
 turtle.penup()
 
@@ -83,10 +87,11 @@ turtle.right(60)
 turtle.pendown()
 
 
-
+turtle.begin_fill()
 for i in range(3):
     turtle.forward(75)
     turtle.right(120)
+turtle.end_fill()
 
 turtle.penup()
 turtle.forward(75)
@@ -95,14 +100,15 @@ turtle.forward(37.5)
 turtle.left(60)
 turtle.pendown()
 
+turtle.begin_fill()
 for i in range(3):
     turtle.forward(130)
     turtle.left(120)
-
+turtle.end_fill()
 
 turtle.penup()
 turtle.goto(-300, -250)
-turtle.right(120)
+turtle.right(150)
 turtle.pendown()
 
 
