@@ -15,6 +15,7 @@ r = pygame.Rect(240, 50, 390, 100)
 pygame.draw.rect(screen, (50, 50, 250), r, 0)
 
 image = pygame.image.load('Image/11.png')
+#image = transparent_back('Image/11.png')
 screen.blit(image, (150,200))
 
 r = pygame.Rect(240, 150, 390, 100)
