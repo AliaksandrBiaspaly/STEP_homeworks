@@ -1,4 +1,4 @@
-import pygame
+'''import pygame
 import sys
 from pygame.color import THECOLORS
 
@@ -30,4 +30,64 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-        pygame.display.flip()
+        pygame.display.flip()'''
+
+import pygame
+
+# start in module python file
+pygame.init()
+
+# display resolution
+display_width = 800
+display_height = 600
+
+# play window
+gameDisplay = pygame.display.set_mode((display_width, display_height))
+pygame.display.set_caption("Don't crush my car")  # Name of game
+
+# colors
+black = (0, 0, 0)
+white = (255, 255, 255)
+
+# FPS
+clock = pygame.time.Clock()
+
+# condition of game over
+crashed = False
+
+# player
+carImg = pygame.image.load('Image/CAR red.png ')
+#carImg = pygame.image.transform.scale(carImg, (70, 88))
+
+# drawing car
+def car(x, y):
+    gameDisplay.blit(carImg, (x, y))
+
+#replacement
+x = (display_width * 0.5)
+y = (display_height * 0.8)
+
+#start game
+while not crashed:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            crashed = True
+            pygame.quit()
+            quit()
+
+        if event.type == pygame.KEYDOWN:
+            if event.key ==pygame.K_ESCAPE:
+                crashed = True
+                pygame.quit()
+#background
+    gameDisplay.fill(white)
+#create a car
+    car(x, y)
+# check update of screen
+    pygame.display.update()
+    #FPS
+    clock.tick(68)
+
+pygame.quit()
+sys.exit()
+
