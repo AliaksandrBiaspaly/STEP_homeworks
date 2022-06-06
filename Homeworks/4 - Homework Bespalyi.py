@@ -9,7 +9,7 @@ turtle.shapesize(3, 3, 3)
 turtle.fillcolor("blue")
 turtle.shape("turtle")
 
-turtle.pen(pencolor="white", pensize=8, speed=4)
+turtle.pen(pencolor="white", pensize=6, speed=4)
 
 turtle.penup()
 turtle.forward(150)
