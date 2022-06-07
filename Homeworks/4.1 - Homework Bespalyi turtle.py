@@ -28,7 +28,7 @@ turtle.rt(90)
 turtle.forward(150)
 turtle.pendown()
 
-turtle.pen(pencolor="blue", pensize=6, speed=20)
+turtle.pen(pencolor="blue", pensize=6, speed=14)
 
 for i in range(4):
     turtle.forward(50)
@@ -60,7 +60,7 @@ turtle.penup()
 turtle.goto(250, 200)
 turtle.pendown()
 
-turtle.pen(pencolor="yellow", pensize=6, speed=11)
+turtle.pen(pencolor="yellow", pensize=6, speed=15)
 for i in range(12):
     turtle.circle(30)
     turtle.right(150)
