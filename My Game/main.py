@@ -49,8 +49,8 @@ gameDisplay = pygame.display.set_mode((display_width, display_height))  # раз
 pygame.display.set_caption("Don't crush my car, dude!")  # название
 
 # цвета
-black = (60, 0, 50)
-white = (238, 255, 255)
+black = (0, 204, 204)
+white = (238, 204, 204)
 red = (255, 0, 0)
 
 # кадры в секунду
@@ -80,7 +80,7 @@ def text_objects(text, font):
 
 # вывод текста на экран
 def message_display(text):
-    largeText = pygame.font.Font('freesansbold.ttf', 115)
+    largeText = pygame.font.Font('freesansbold.ttf', 80)
     TextSurf, TextRect = text_objects(text, largeText)
     TextRect.center = ((display_width / 2), (display_height / 2))
     gameDisplay.blit(TextSurf, TextRect)
