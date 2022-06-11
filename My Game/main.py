@@ -156,7 +156,7 @@ def game_loop():
     # параметры для появления things
     thing_startx = random.randrange(0, display_width)
     thing_starty = -600
-    thing_speed = 8
+    thing_speed = 4
     thing_width = 60
     thing_height = 60
 
@@ -215,7 +215,7 @@ def game_loop():
             thing_startx = random.randrange(0, display_width)
             dodged += 1
             thing_speed += 1
-            thing_width += (dodged * 1.005)
+            #thing_width += (dodged * 1.005)
 
         # условия для столкновений с камнями чтобы работали
         if y < thing_starty + thing_height:
