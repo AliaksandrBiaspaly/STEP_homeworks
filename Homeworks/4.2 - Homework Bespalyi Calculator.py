@@ -14,3 +14,17 @@ if operation == '+':
     print('Answer is ', q1, operation, q2, ' = ', q1 + q2)
 if operation == '-':
     print('Answer is ', q1, operation, q2, ' = ', q1 - q2)
+
+
+# Метод isdigit поможет, он возвращает True, если строка состоит только из чисел.
+# Так можно сделать проверку вводимых пользователем данных:
+
+i = ""
+while i.isdigit() == False:
+    i = input("Введите число: ")
+    if i == "выход":
+        break
+    elif i.isdigit() == False:
+        print("Неверное значение")
+if i != "выход":
+    i = int(i)
