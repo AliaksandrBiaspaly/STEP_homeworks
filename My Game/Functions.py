@@ -3,7 +3,7 @@ import time
 from pygame import draw, font, mouse, display
 
 # функция для появляющихся элементов на дороге
-from constant import gameDisplay, carImg, black, display_height, display_width
+from constant import gameDisplay, carImg, black, display_height, display_width, car2Img
 
 
 def things(thingx, thingy, thingw, thingh, color):
@@ -16,7 +16,7 @@ def car(x, y):
 
 
 def car2(x1, y1):
-    gameDisplay.blit(carImg, (x1, y1))
+    gameDisplay.blit(car2Img, (x1, y1))
 
 
 # счетчик пролетевших блоков

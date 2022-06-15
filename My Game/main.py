@@ -1,37 +1,3 @@
-'''import pygame
-import sys
-from pygame.color import THECOLORS
-
-pygame.init()
-#создание экрана
-screen = pygame.display.set_mode((800, 800))
-#screen.fill(THECOLORS['aquamarine'])
-bg = pygame.image.load('Image/34.png')
-bg = pygame.transform.scale(bg, (800, 800))
-screen.blit(bg, (10, 10))
-
-
-r = pygame.Rect(240, 50, 390, 100)
-pygame.draw.rect(screen, (50, 50, 250), r, 0)
-
-image = pygame.image.load('Image/11.png')
-#image = transparent_back('Image/11.png')
-screen.blit(image, (150,200))
-
-r = pygame.Rect(240, 150, 390, 100)
-pygame.draw.rect(screen, (255, 255, 0), r, 0)
-
-r = pygame.Rect(250, 250, 10, 180)
-pygame.draw.rect(screen, (50, 50, 250), r, 0)
-
-
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        pygame.display.flip()'''
-
 import pygame
 import sys  # for exit
 import time
@@ -42,6 +8,7 @@ from constant import *
 
 # стартуем в файле модули пайгейм
 pygame.init()
+
 
 def game_intro():
     intro = True
@@ -66,14 +33,20 @@ def game_intro():
 
 
 def crash():
-    message_display('GAME OVER!')
+    message_display('RED CAR CRASHED!')
+
+
+def crash2():
+    message_display('POLICE LOOSER!')
 
 
 # функция для запуска игры
+
+
 def game_loop():
     # размещение
     x = (display_width * 0.45)
-    y = (display_height * 0.8)
+    y = (display_height * 0.65)
 
     x1 = (display_width * 0.65)
     y1 = (display_height * 0.8)
@@ -110,9 +83,6 @@ def game_loop():
                 if event.key == pygame.K_LEFT:
                     x_change = -5
 
-
-
-
                 elif event.key == pygame.K_RIGHT:
                     x_change = 5
 
@@ -125,6 +95,10 @@ def game_loop():
             # условия для движения
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                    x_change = 0
+
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_a or event.key == pygame.K_d:
                     x_change = 0
 
         # смена позиции
@@ -147,6 +121,10 @@ def game_loop():
             gameExit = True
             crash()
 
+        if x1 > display_width - car2_width or x1 < 0:
+            gameExit = True
+            crash2()
+
         if thing_starty > display_height:
             thing_starty = 0 - thing_height
             thing_startx = random.randrange(0, display_width)
@@ -161,6 +139,13 @@ def game_loop():
             if x > thing_startx and x < thing_startx + thing_width or x + car_width > thing_startx and x + car_width < thing_startx + thing_width:
                 print('x crossover')
                 crash()
+
+        if y1 < thing_starty + thing_height:
+            print('y1 crossover')  # для проверки условия для себя принтим
+
+            if x1 > thing_startx and x1 < thing_startx + thing_width or x1 + car2_width > thing_startx and x1 + car2_width < thing_startx + thing_width:
+                print('x1 crossover')
+                crash2()
 
         # проверяем на обновления дисплея
         pygame.display.update()

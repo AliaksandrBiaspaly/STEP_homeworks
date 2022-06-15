@@ -2,7 +2,7 @@
 from pygame import display, time, image, transform
 
 # размер окна
-display_width = 600  # параметр высоты
+display_width = 800  # параметр высоты
 display_height = 600  # параметр ширины
 
 # окно игры
@@ -22,7 +22,12 @@ bright_red = (255, 0, 0)
 # кадры в секунду
 clock = time.Clock()
 
-# player
-carImg = image.load('Image/Blue rodster.png')
-carImg = transform.scale(carImg, (60, 80))
+# player1
+carImg = image.load('Image/red car.png')
+carImg = transform.scale(carImg, (50, 80))
 car_width = 70
+
+# player2
+car2Img = image.load('Image\police transparent.png')
+car2Img = transform.scale(car2Img, (80, 80))
+car2_width = 70
