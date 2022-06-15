@@ -37,89 +37,11 @@ import sys  # for exit
 import time
 import random
 
+from Functions import message_display, button, text_objects, things, car, car2, things_dodged
+from constant import *
 
 # стартуем в файле модули пайгейм
 pygame.init()
-
-# размер окна
-display_width = 600  # параметр высоты
-display_height = 600  # параметр ширины
-
-# окно игры
-gameDisplay = pygame.display.set_mode((display_width, display_height))  # размер
-pygame.display.set_caption("Let's crush my car!")  # название
-
-# цвета
-black = (0, 204, 204)
-white = (238, 204, 204)
-red = (255, 0, 0)
-green = (0, 200, 0)
-bright_green = (255, 0, 0)
-bright_red = (255, 0, 0)
-
-# кадры в секунду
-clock = pygame.time.Clock()
-
-# player
-carImg = pygame.image.load('Image/Blue rodster.png')
-carImg = pygame.transform.scale(carImg, (60, 80))
-car_width = 70
-
-
-# функция для появляющихся элементов на дороге
-def things(thingx, thingy, thingw, thingh, color):
-    pygame.draw.rect(gameDisplay, color, [thingx, thingy, thingw, thingh])
-
-
-# отрисовка авто
-def car(x, y):
-    gameDisplay.blit(carImg, (x, y))
-
-
-# счетчик пролетевших блоков
-def things_dodged(count):
-    font = pygame.font.SysFont(None, 25)
-    text = font.render("Hi, looser, you've reached: " + str(count), True, black)
-    gameDisplay.blit(text, (0, 0))
-
-
-# обработка текста
-def text_objects(text, font):
-    textSurface = font.render(text, True, black)
-    return textSurface, textSurface.get_rect()
-
-
-# вывод текста на экран
-def message_display(text):
-    largeText = pygame.font.Font('freesansbold.ttf', 80)
-    TextSurf, TextRect = text_objects(text, largeText)
-    TextRect.center = ((display_width / 2), (display_height / 2))
-    gameDisplay.blit(TextSurf, TextRect)
-
-    pygame.display.update()
-
-    time.sleep(3)
-
-    game_loop()
-
-
-def button(msg, x, y, w, h, ic, ac, action=None):
-    mouse = pygame.mouse.get_pos()
-    click = pygame.mouse.get_pressed()
-    print(click)
-    if x + w > mouse[0] > x and y + h > mouse[1] > y:
-        pygame.draw.rect(gameDisplay, ac, (x, y, w, h))
-
-        if click[0] == 1 and action != None:
-            action()
-    else:
-        pygame.draw.rect(gameDisplay, ic, (x, y, w, h))
-
-    smallText = pygame.font.SysFont("comicsansms", 20)
-    textSurf, textRect = text_objects(msg, smallText)
-    textRect.center = ((x + (w / 2)), (y + (h / 2)))
-    gameDisplay.blit(textSurf, textRect)
-
 
 def game_intro():
     intro = True
@@ -153,6 +75,9 @@ def game_loop():
     x = (display_width * 0.45)
     y = (display_height * 0.8)
 
+    x1 = (display_width * 0.65)
+    y1 = (display_height * 0.8)
+
     # параметры для появления things
     thing_startx = random.randrange(0, display_width)
     thing_starty = -600
@@ -160,10 +85,11 @@ def game_loop():
     thing_width = 60
     thing_height = 60
 
-    # тартовое значение для пролетевших блоков
+    # cтартовое значение для пролетевших блоков
     dodged = 0
 
-    x_change = 0  # позиция
+    x_change = 0
+    x1_change = 0  # позиция
     gameExit = False
 
     while not gameExit:
@@ -184,8 +110,17 @@ def game_loop():
                 if event.key == pygame.K_LEFT:
                     x_change = -5
 
+
+
+
                 elif event.key == pygame.K_RIGHT:
                     x_change = 5
+
+                if event.key == pygame.K_a:
+                    x1_change = -5
+
+                elif event.key == pygame.K_d:
+                    x1_change = 5
 
             # условия для движения
             if event.type == pygame.KEYUP:
@@ -194,6 +129,7 @@ def game_loop():
 
         # смена позиции
         x += x_change
+        x1 += x1_change
 
         # фон
         gameDisplay.fill(white)
@@ -203,6 +139,7 @@ def game_loop():
 
         # создаем машину
         car(x, y)
+        car2(x1, y1)
         things_dodged(dodged)
 
         # задаем границы
@@ -215,7 +152,7 @@ def game_loop():
             thing_startx = random.randrange(0, display_width)
             dodged += 1
             thing_speed += 1
-            #thing_width += (dodged * 1.005)
+            # thing_width += (dodged * 1.005)
 
         # условия для столкновений с камнями чтобы работали
         if y < thing_starty + thing_height:
@@ -229,6 +166,7 @@ def game_loop():
         pygame.display.update()
         # кадры в секунду = 60
         clock.tick(60)
+
 
 game_intro()
 game_loop()
