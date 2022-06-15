@@ -1,6 +1,7 @@
 import time
 
 from pygame import draw, font, mouse, display
+from pygame import mixer
 
 # функция для появляющихся элементов на дороге
 from constant import gameDisplay, carImg, black, display_height, display_width, car2Img

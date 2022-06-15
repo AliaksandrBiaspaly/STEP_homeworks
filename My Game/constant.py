@@ -1,5 +1,7 @@
-
+import pygame
 from pygame import display, time, image, transform
+from os import path
+from pygame import mixer
 
 # размер окна
 display_width = 800  # параметр высоты
@@ -18,7 +20,6 @@ green = (0, 200, 0)
 bright_green = (255, 0, 0)
 bright_red = (255, 0, 0)
 
-
 # кадры в секунду
 clock = time.Clock()
 
@@ -31,3 +32,6 @@ car_width = 70
 car2Img = image.load('Image\police transparent.png')
 car2Img = transform.scale(car2Img, (80, 80))
 car2_width = 70
+
+snd_dir = path.join(path.dirname(__file__), 'snd')
+intro_sound = pygame.mixer.Sound(path.join(snd_dir, 'Sounds\destiny.wav'))
