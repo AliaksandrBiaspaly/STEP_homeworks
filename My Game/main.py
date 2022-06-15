@@ -15,21 +15,25 @@ pygame.mixer.init()
 def game_intro():
     intro = True
 
+    intro_sound.play()
+
+
     while intro:
+
+
         for event in pygame.event.get():
+
             print(event)
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-
-
 
         gameDisplay.fill(white)
         largeText = pygame.font.Font('freesansbold.ttf', 60)
         TextSurf, TextRect = text_objects("Let's crash my car!", largeText)
         TextRect.center = ((display_width / 2), (display_height / 2))
         gameDisplay.blit(TextSurf, TextRect)
-        intro_sound.play()
 
         button("GO!", 150, 450, 100, 50, green, bright_green, game_loop)
 
@@ -38,17 +42,32 @@ def game_intro():
 
 
 def crash():
+    crash_sound.play()
     message_display('RED CAR CRASHED!')
 
 
+def crash_out():
+    crash_sound.play()
+    message_display('RED CAR OUT!')
+
+
 def crash2():
+    crash_sound.play()
     message_display('POLICE LOOSER!')
+
+
+def crash2_out():
+    crash_sound.play()
+    message_display('POLICE OUT !')
 
 
 # функция для запуска игры
 
 
 def game_loop():
+    intro_sound.stop()
+    race_sound.play()
+
     # размещение
     x = (display_width * 0.45)
     y = (display_height * 0.65)
@@ -61,7 +80,7 @@ def game_loop():
     thing_starty = -600
     thing_speed = 4
     thing_width = 60
-    thing_height = 60
+    thing_height = 70
 
     # cтартовое значение для пролетевших блоков
     dodged = 0
@@ -71,6 +90,8 @@ def game_loop():
     gameExit = False
 
     while not gameExit:
+
+
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -104,7 +125,7 @@ def game_loop():
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_a or event.key == pygame.K_d:
-                    x_change = 0
+                    x1_change = 0
 
         # смена позиции
         x += x_change
@@ -113,7 +134,7 @@ def game_loop():
         # фон
         gameDisplay.fill(white)
         # вызов things
-        things(thing_startx, thing_starty, thing_width, thing_height, black)
+        things(thing_startx, thing_starty)
         thing_starty += thing_speed  # скорость +
 
         # создаем машину
@@ -124,18 +145,18 @@ def game_loop():
         # задаем границы
         if x > display_width - car_width or x < 0:
             gameExit = True
-            crash()
+            crash_out()
 
         if x1 > display_width - car2_width or x1 < 0:
             gameExit = True
-            crash2()
+            crash2_out()
 
         if thing_starty > display_height:
             thing_starty = 0 - thing_height
-            thing_startx = random.randrange(0, display_width)
+            thing_startx = random.randrange(0, display_width-1)
             dodged += 1
             thing_speed += 1
-            # thing_width += (dodged * 1.005)
+            #thing_width += (dodged * 1.1)
 
         # условия для столкновений с камнями чтобы работали
         if y < thing_starty + thing_height:

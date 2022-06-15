@@ -4,11 +4,11 @@ from pygame import draw, font, mouse, display
 from pygame import mixer
 
 # функция для появляющихся элементов на дороге
-from constant import gameDisplay, carImg, black, display_height, display_width, car2Img
+from constant import gameDisplay, carImg, black, display_height, display_width, car2Img, thingImg, race_sound
 
 
-def things(thingx, thingy, thingw, thingh, color):
-    draw.rect(gameDisplay, color, [thingx, thingy, thingw, thingh])
+def things(x, y):
+    gameDisplay.blit(thingImg, (x, y))
 
 
 # отрисовка авто
@@ -25,6 +25,7 @@ def things_dodged(count):
     font1 = font.SysFont(None, 25)
     text = font1.render("Hi, looser, you've reached: " + str(count), True, black)
     gameDisplay.blit(text, (0, 0))
+
 
 
 # обработка текста
@@ -51,11 +52,14 @@ def button(msg, x, y, w, h, ic, ac, action=None):
     mouse1 = mouse.get_pos()
     click = mouse.get_pressed()
     print(click)
+
+
     if x + w > mouse1[0] > x and y + h > mouse1[1] > y:
         draw.rect(gameDisplay, ac, (x, y, w, h))
 
         if click[0] == 1 and action != None:
             action()
+
     else:
         draw.rect(gameDisplay, ic, (x, y, w, h))
 
