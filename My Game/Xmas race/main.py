@@ -1,8 +1,6 @@
 import pygame
 import sys  # for exit
-import time
 import random
-from pygame import mixer
 
 from Functions import message_display, button, text_objects, things, car, car2, things_dodged, things2
 from constant import *
