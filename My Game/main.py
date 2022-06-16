@@ -4,7 +4,7 @@ import time
 import random
 from pygame import mixer
 
-from Functions import message_display, button, text_objects, things, car, car2, things_dodged
+from Functions import message_display, button, text_objects, things, car, car2, things_dodged, things2
 from constant import *
 
 # стартуем в файле модули пайгейм
@@ -17,9 +17,7 @@ def game_intro():
 
     intro_sound.play()
 
-
     while intro:
-
 
         for event in pygame.event.get():
 
@@ -31,7 +29,7 @@ def game_intro():
 
         gameDisplay.fill(white)
         largeText = pygame.font.Font('freesansbold.ttf', 60)
-        TextSurf, TextRect = text_objects("Let's crash my car!", largeText)
+        TextSurf, TextRect = text_objects("CHRISTMAS RACE", largeText)
         TextRect.center = ((display_width / 2), (display_height / 2))
         gameDisplay.blit(TextSurf, TextRect)
 
@@ -43,21 +41,31 @@ def game_intro():
 
 def crash():
     crash_sound.play()
+    race_sound.stop()
     message_display('RED CAR CRASHED!')
 
 
 def crash_out():
     crash_sound.play()
+    race_sound.stop()
     message_display('RED CAR OUT!')
 
 
 def crash2():
     crash_sound.play()
+    race_sound.stop()
     message_display('POLICE LOOSER!')
+
+
+def crash_girls():
+    crash_sound.play()
+    race_sound.stop()
+    message_display("GIRLS GO TO THE HOSPITAL")
 
 
 def crash2_out():
     crash_sound.play()
+    race_sound.stop()
     message_display('POLICE OUT !')
 
 
@@ -76,11 +84,17 @@ def game_loop():
     y1 = (display_height * 0.8)
 
     # параметры для появления things
-    thing_startx = random.randrange(0, display_width)
+    thing_startx = random.randrange(0, display_width - 50)
     thing_starty = -600
     thing_speed = 4
     thing_width = 60
     thing_height = 70
+
+    thing2_startx = random.randrange(0, display_width - 100)
+    thing2_starty = -500
+    thing2_speed = 3
+    thing2_width = 60
+    thing2_height = 70
 
     # cтартовое значение для пролетевших блоков
     dodged = 0
@@ -90,8 +104,6 @@ def game_loop():
     gameExit = False
 
     while not gameExit:
-
-
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -137,6 +149,9 @@ def game_loop():
         things(thing_startx, thing_starty)
         thing_starty += thing_speed  # скорость +
 
+        things2(thing2_startx, thing2_starty)
+        thing2_starty += thing2_speed  # скорость +
+
         # создаем машину
         car(x, y)
         car2(x1, y1)
@@ -153,16 +168,28 @@ def game_loop():
 
         if thing_starty > display_height:
             thing_starty = 0 - thing_height
-            thing_startx = random.randrange(0, display_width-1)
+            thing_startx = random.randrange(0, display_width - 100)
             dodged += 1
-            thing_speed += 1
-            #thing_width += (dodged * 1.1)
+            thing_speed += 0.9
+            # thing_width += (dodged * 1.1)
+
+        if thing2_starty > display_height:
+            thing2_starty = 0 - thing2_height
+            thing2_startx = random.randrange(0, display_width - 100)
+            dodged += 1
+            thing2_speed += 0.7
 
         # условия для столкновений с камнями чтобы работали
         if y < thing_starty + thing_height:
             print('y crossover')  # для проверки условия для себя принтим
 
             if x > thing_startx and x < thing_startx + thing_width or x + car_width > thing_startx and x + car_width < thing_startx + thing_width:
+                print('x crossover')
+                crash()
+        if y < thing2_starty + thing2_height:
+            print('y crossover')  # для проверки условия для себя принтим
+
+            if x > thing2_startx and x < thing2_startx + thing2_width or x + car_width > thing2_startx and x + car_width < thing2_startx + thing2_width:
                 print('x crossover')
                 crash()
 
@@ -172,6 +199,13 @@ def game_loop():
             if x1 > thing_startx and x1 < thing_startx + thing_width or x1 + car2_width > thing_startx and x1 + car2_width < thing_startx + thing_width:
                 print('x1 crossover')
                 crash2()
+
+        if y1 < thing2_starty + thing2_height:
+            print('y1 crossover')  # для проверки условия для себя принтим
+
+            if x1 > thing2_startx and x1 < thing2_startx + thing2_width or x1 + car2_width > thing2_startx and x1 + car2_width < thing2_startx + thing2_width:
+                print('x1 crossover')
+                crash_girls()
 
         # проверяем на обновления дисплея
         pygame.display.update()

@@ -11,7 +11,7 @@ display_height = 600  # параметр ширины
 
 # окно игры
 gameDisplay = display.set_mode((display_width, display_height))  # размер
-display.set_caption("Let's crush my car!")  # название
+display.set_caption("Xmas race")  # название
 
 # цвета
 # Colors used in project
@@ -36,12 +36,15 @@ car2Img = transform.scale(car2Img, (100, 100))
 car2_width = 60
 
 # dodge
-thingImg = image.load('Image\hole.png')
-thingImg = transform.scale(thingImg, (120, 120))
-#thing_width = 70
+thingImg = image.load('Image\snowman-with-christmas-lantern-png-download-free.png')
+thingImg = transform.scale(thingImg, (80, 80))
+
+thing2Img = image.load('Image\girl-christmas-free-download-image.png')
+thing2Img = transform.scale(thing2Img, (90, 100))
+thing2_width = 60
 
 snd_dir = path.join(path.dirname(__file__), 'snd')
 pygame.init()
 intro_sound = Sound(path.join('Sounds\destiny.wav'))
-race_sound = Sound(path.join('Sounds\migalka-na-politseyskoy-mashine-34230.wav'))
+race_sound = Sound(path.join('Sounds\dizzy_racing.ogg'))
 crash_sound = Sound(path.join('Sounds\carcrash.wav'))
