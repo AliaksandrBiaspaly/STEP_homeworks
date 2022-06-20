@@ -1,6 +1,7 @@
 import pygame
 import sys  # for exit
 import random
+import datetime
 
 from Functions import message_display, button, text_objects, things, car, car2, things_dodged, things2
 from constant import *
@@ -41,6 +42,7 @@ def crash():
     crash_sound.play()
     race_sound.stop()
     message_display('RED CAR CRASHED!')
+
 
 
 def crash_out():

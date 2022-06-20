@@ -13,3 +13,6 @@ number3 = int(input())
 buff = [number1, number2, number3]
 with open ('num.txt', 'w+', encoding = 'utf8') as file:
     file.write(str(buff))
+
+
+
