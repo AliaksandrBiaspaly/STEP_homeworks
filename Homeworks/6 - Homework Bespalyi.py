@@ -1,19 +1,3 @@
-'''def generator1():
-    for number in ['apple', 'water', 'toast']:
-        yield number
-
-fruit = generator1()
-print(next(fruit))
-print(next(fruit))
-print()
-
-weather = iter(['rain', 'sun', 'cold', 'hurrican', 'windy'])
-for i in weather:
-    # print(next(weather, 'STOP'))
-    print(i)
-#print(next(weather))
-#print(next(weather))
-print()'''
 import time
 
 """ 1.  Создайте класс Soda (для определения типа газированной воды), принимающий 1 аргумент при инициализации
@@ -22,7 +6,8 @@ import time
  добавки, а иначе отобразится следующая фраза: «Обычная газировка».
 """
 
-
+print()
+print("----------TASK 1 ------------------")
 class Soda():  # create class Soda to define the type of sparkling water
 
     def __init__(self, add):
@@ -40,7 +25,7 @@ drink1 = Soda("Апельсин")
 drink2 = Soda("Киви")
 drink3 = Soda("")
 
-print(drink2.add)
+#print(drink2.add)
 
 drink1.show_my_drink()
 drink2.show_my_drink()
@@ -57,10 +42,11 @@ drink3.show_my_drink()
   или метод «приветствие», то ничего у такого хитреца не получится).
 Для ограничения количества наборов свойств и методов в экземпляре применяется специальный магический
  атрибут __slots__."""
+
 print()
+print("----------TASK 2 ------------------")
 
-
-"""class Nikola():
+class Nikola():
     __slots__ = "name", "age"
 
     def __init__(self, age, name = "Николай"):
@@ -73,13 +59,6 @@ print()
         #     print(self.name)
 
 
-
-    # def show_name(self):
-    #     if self.name != "Николай":
-    #         print(f"Я не {self.name}, а Николай")
-    #     else:
-    #         print(self.name)
-
     def greeting(self):
         pass
 
@@ -89,11 +68,9 @@ print()
 person1 = Nikola(45, "Максим")
 print(f"Я действительно {person1.name}")
 person1.greeting() # Метод привет не работает, ничего не происходит
-person1.last_name = "Васильевич"  # присвоить отчество не получится
-
-#person1.show_name()
-#Nikola.show_name(person1)
-# #Nikola.show_name(person2)"""
+# person1.last_name = "Васильевич"  # присвоить отчество не получится
+print()
+print("----------TASK 3 ------------------")
 
 """ 3.Напишите программу с классом Student, в котором есть три атрибута: name,
 # groupNumber и age. По умолчанию name = Ivan, age = 18, groupNumber = 10A. 
@@ -165,8 +142,9 @@ Student.print_details(student3)
 Student.print_details(student4)
 Student.print_details(student5)
 
-
 print()
+print("----------TASK 4 ------------------")
+
 
 
 """ 4. Напишите программу с классом Math. Создайте два атрибута — a и b. 
@@ -195,8 +173,9 @@ print(f'Multiplication is {Math.multiplication(my_number)}')
 print(f'Substraction is {Math.substraction(my_number)}')
 print(f'Addition is {Math.addition(my_number)}')
 print(f'Division {Math.division(my_number)}')
-
 print()
+print("----------TASK 5 ------------------")
+
 
 """ 5.Напишите программу с классом Car. Создайте конструктор класса Car. 
 Создайте атрибуты класса Car — color (цвет), type (тип), year (год). 
@@ -205,7 +184,7 @@ print()
 Третий — присвоение автомобилю года выпуска.
 Четвертый метод — присвоение автомобилю типа. 
 Пятый — присвоение автомобилю цвета.       """
-# colour = None, model = None, year = None
+
 class Car:
 
     def __init__(self, colour = None, model = None, year = None):
@@ -242,8 +221,8 @@ class Car:
               f'Цвет: {self.colour}')
 
 my_car = Car()
-# my_car.start_engine()
-# my_car.stop_engine()
+my_car.start_engine()
+my_car.stop_engine()
 my_car.set_type("Кабриолет")
 my_car.set_colour("Красный")
 my_car.set_year(2020)
