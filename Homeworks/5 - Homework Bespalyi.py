@@ -84,7 +84,7 @@ def hello(x: str) -> int:
 z = "0b1010"
 print((hello(z)))
 print(type(hello(z)))
-
+print()
 
 # 4 Написать функцию для суммы чисел, для нее написать декоратор, который возводит в степень результаты
 # и выводит на экран в виде (степень суммы чисел x,y = )
@@ -92,13 +92,15 @@ print(type(hello(z)))
 def squard(result_sum):
     def wrapper(x, y):
         zz = round(result_sum(x, y) ** 2, 2)
-        print("степень суммы чисел: x= ", x, "y = ", y, " равно ", zz)
+        print("Степень суммы чисел: x= ", x, "y = ", y, " равно ", zz)
     return wrapper
 
 
 @squard
 def sum(first: float, second: float):
-    return round(first + second, 2)
+    gg = round(first + second, 2)
+    print("Сумма чисел равна: ", gg)
+    return gg
 
 
 sum(2.33, 5.4)
@@ -111,7 +113,7 @@ def generator_numbers(n: int):
     for number in range(n):
         yield number
 
-
+print()
 my_list = generator_numbers(100000)
 print(next(my_list))
 print(next(my_list))

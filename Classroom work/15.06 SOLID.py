@@ -1,4 +1,4 @@
-from email.header import UTF8
+from email.header import UTF-8
 
 file = open('tekst.txt', 'r', encoding="utf8")
 print(file.read(120))
