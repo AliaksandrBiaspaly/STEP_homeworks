@@ -6,7 +6,7 @@ import sqlite3 as sql
 Имя нашей базы данных - «employees.db». Сохраняем подключение к объекту подключения.
 В следующий раз, когда мы запустим этот файл ****.py, он просто подключается к базе данных,
 и если базы данных нет, он создаст ее. '''
-connecion = sql.connect('employees.db')
+connection = sql.connect('employees.db')
 
 '''3) Создайте таблицу базы данных
 Чтобы создать таблицу в базе данных, нам нужно использовать объект курсора.
@@ -18,11 +18,11 @@ cursor = connection.cursor()
     Используйте  метод cursor.execute(),  чтобы написать запрос CREATE TABLE.  
      В этом коде мы написали команду, которая создаст таблицу с ее именами столбцов и типами данных.'''
 
-cursor.execute("""
+cursor.execute ("""
                 CREATE TABLE IF NOT EXISTS Employees(
-                employee_id INTEGER PRIMARY KEY AUTOINCREMENT
+                employee_id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT,
-                manager_id TEXT
+                manager_id TEXT,
                 job_id TEXT,
                 department_id TEXT,
                 salary REAL,
@@ -34,4 +34,4 @@ cursor.execute("""
 connection.commit()
 
 ''' 6) Закрыть соединение с БД'''
-connecion.close()
+connection.close()
