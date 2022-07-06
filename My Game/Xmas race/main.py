@@ -1,10 +1,8 @@
-import pygame
 import sys  # for exit
 import random
-import datetime
 
-from Functions import message_display, button, text_objects, things, car, car2, things_dodged, things2
-from constant import *
+from Files.Functions import message_display, button, text_objects, things, car, car2, things_dodged, things2
+from Files.constant import *
 
 # стартуем в файле модули пайгейм
 pygame.init()
