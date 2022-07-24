@@ -68,7 +68,7 @@ connection.commit()
 # cursor.execute("UPDATE Employees SET firstname = 'David' WHERE employee_id = 9")
 # cursor.execute("UPDATE Employees SET firstname = 'Anton' WHERE employee_id = 10")
 
-# Добавляем столбец с именем, который забыли, и вносим в эту колонку данные
+# Добавляем столбец с датой начала работы, который забыли, и вносим в эту колонку данные
 #cursor.execute("ALTER TABLE Employees ADD COLUMN start_date DATE")
 # cursor.execute("UPDATE Employees SET start_date = '2012-09-22' WHERE employee_id = 1")
 # cursor.execute("UPDATE Employees SET start_date = '2002-02-12' WHERE employee_id = 2")
