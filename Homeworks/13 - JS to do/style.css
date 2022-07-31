@@ -69,13 +69,13 @@ body{
     padding: 5px 10px;
     display: flex;
 }
-.task span{
+.task span {
     font-family: 'Poppins',sans-serif;
     font-size: 15px;
     font-weight: 400;
 }
 
-.task button{
+.task button {
     background-color: #bb5959;
     color: #ffffff;
     border: none;
