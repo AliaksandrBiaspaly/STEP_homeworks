@@ -1,0 +1,519 @@
+html {
+    font-family: Poppins, sans-serif;
+}
+
+.content-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    
+
+}
+
+.header-section {
+    height: 960px; 
+    background-color: #F6EBDA; 
+    overflow: hidden;
+    position: relative;
+    z-index: -2;
+}
+
+body {
+    margin: 0;
+    width: 1440px;
+    }
+
+.right-top-image {
+    position: absolute;
+    top: -34px;  
+    right: -50px;
+    z-index: -1;
+    margin-left: auto;
+}
+
+.left-bottom-image {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+
+}
+
+.coffee-cup {
+    position: absolute;
+    width: 416px;
+    height: 412px;
+    right: 160px;
+    top: 160px;
+}
+
+
+header {
+    margin-top: 44px;
+    display: inline-flex;
+}
+
+.logo-coffee {
+    background-image: url(image/logo_coffe.svg);
+    width: 150px;
+    height: 30px;
+    display: inline-block;
+}  
+
+.header-slogan {    
+   margin-top: 216px;
+}
+
+.header-slogan h1 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    position: absolute;
+    top: 144px;
+    align-items: center;
+    color: #2F2105;
+    height: 142px;
+    width: 490px;
+   
+    
+}
+.colortext {
+    color: #FF902B;
+    
+}
+
+.header-slogan p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    align-items: center;
+    color:#7E7D7A;
+    height: 54px;
+    width: 392px;
+    position: relative;
+    top:60px
+    
+    
+}
+
+.top-nav {
+    position: absolute;
+    left: 514px;
+    align-content: center;   
+    /* display: inline-block;   */
+               
+}
+
+.top-nav a {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    padding: 16px;
+}
+
+
+.search-wrapper {
+    display: inline-block;
+
+    position: absolute;
+    right: 200px;
+    top: 40px;
+    background-color:#FFFFFF;
+    width: 222px;
+    height: 40px;
+    border-radius: 35px;    
+
+}
+
+.search-wrapper input {
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #929292;
+    border: none;
+    position: absolute;
+    left: 52px;
+    top: 11px;
+    
+       
+  }
+  
+.search-wrapper img {
+    left: 16px;
+    top: 10px;
+    position: absolute;
+
+  } 
+  
+  
+
+.icon-cart {
+    background-image: url(image/icon_cart.svg);
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 148px;
+    top: 40px;
+    /* display: inline-block; */
+    float: right;
+    margin-left: 26px;  
+    
+}
+
+.order-now-button {
+    width: 170px;
+    height: 46px;
+    position: absolute;
+    top: 450px;
+    background: #2F2105;
+    /* box-shadow: 0px 4px 32px rgba(223, 195, 124, 0.25); */
+    border-radius: 33px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  
+}
+
+
+.order-now-button input {
+    
+    background: #2F2105;
+    position: absolute;
+    left: 32px;
+    top: 12px;
+    color: #FFFFFF;
+
+    font-weight: 600;
+    font-size: 14px;
+    /* line-height: 21px; */
+    border: none;
+    width: 74px;
+    height: 21px;        
+    
+}
+
+
+.order-now-button img {
+    width: 26px;
+    height: 26px;
+
+    position: relative;
+    left: 45px;
+   
+
+    
+
+}
+
+
+.more-menu-link {
+    position: absolute;
+    left: 400px;
+    top: 460px;
+}
+
+.more-menu-link a {
+
+    font-weight: 700;
+    font-size: 16px;
+    /* line-height: 18px; */
+    text-decoration: none;
+
+
+}
+
+
+
+
+.section-caption {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    margin-top: 110px;
+    margin-bottom: 32px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.guide-item {
+    text-align: center;
+}
+
+.guide-item h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #2F2105;
+    letter-spacing: 0.04em;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.guide-item span {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #2F2105;
+    letter-spacing: 0.04em;
+}
+
+.delivery {
+    padding-bottom:72px ;
+}
+
+/* ======================= */
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+}
+
+.menu-items {
+    border-radius: 12px;
+    padding: 24px 18px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.16);
+    width: 27%;
+
+
+}
+
+.menu-h3{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.img-menu {
+    border-radius: 12px;
+    width: 100%;
+}
+
+.menu-button {
+    background-image: url(/image/button-img.svg);
+    background-size: cover;
+    background-position: center;
+    width: 43px;
+    height: 43px;
+}
+
+.menu-description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-description span {
+    width: 60%;
+    color: #7E7D7A;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.item-rating {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: rgb(255, 255, 255);
+    border: 4px solid rgb(146, 146, 146, 0.5);
+    border-radius: 50px;
+    position: relative;
+    top: 52px;
+    left: 12px;
+    width: 62px;
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-rating span{
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    
+}
+
+.about-us {
+    background-image: url(/image/bg-image.png);
+    display: flex;   
+    width: 1489.18px;
+    height: 484px;
+
+}
+
+.image-page3 {
+    position: relative;
+    width: 370px;
+    height: 326px;
+    left: 235px;
+    top: 90px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 100%);
+    border-radius: 12px;
+    /* border: 7px solid #FFFFFF; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.about-us h1 {
+    margin: 0px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    position: relative;
+    left: 355px;
+    top: 84px;
+}
+
+.line-us {
+    width: 43px;
+    height: 4px;
+    background: #FF912B;
+    border-radius: 12px;
+    position: relative;
+    top: 76px;
+    left: 468px;
+    margin: 0px;
+
+
+}
+
+
+.about-us h3 {
+    margin: 0px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.04em;
+    position: relative;
+    left: 355px;
+    top: 120px;
+    width: 348px;
+    height: 72px;  
+
+
+}
+
+.about-us p {
+    margin: 0px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.04em;
+    color: #7E7D7A;
+    position: relative;
+    left: 355px;
+    top: 140px;
+    width: 478px;
+    height: 81px;
+
+}
+
+.get-coffee-button {
+
+    background: #2F2105;
+    border-radius: 33px;
+    width: 142px;
+    height: 38px;
+    position: absolute;
+    top: 1835px;
+    left: 725px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    /* top: 140px; */
+
+
+
+
+}
+
+.get-coffee-button input {
+
+    background: #2F2105;
+    border: none;
+
+    width: 94px;
+    height: 18px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    color: #F4AE26
+    
+}
+
+.subscribe-container{
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe-container{
+    width: 100%;
+    height: 392px;
+    background: url(/image/BGimagepage5.png);
+    background-size: cover;
+    border-radius: 24px;
+    margin-top: 133px;
+    margin-bottom: 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscribe-text{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    margin-bottom: 26px;
+}
+
+.back-input-subscribe{
+    width: 486px;
+    height: 54px;
+    background: #FFFFFF;
+    border-radius: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back-input-subscribe input{
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    color: #7E7D7A;
+    margin-left: 16px;
+    border: none;
+    outline:none;
+}
+
+.button-subscribe{
+    padding: 12px 32px;
+    background: #2F2105;
+    box-shadow: 0px 4px 32px rgba(223, 195, 124, 0.25);
+    border-radius: 33px;
+    margin-right: 5px;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+}
