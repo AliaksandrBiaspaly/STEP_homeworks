@@ -4,8 +4,7 @@ html {
 
 .content-wrapper {
     width: 80%;
-    margin: 0 auto;
-    
+    margin: 0 auto;   
 
 }
 
@@ -138,13 +137,13 @@ header {
     left: 52px;
     top: 11px;   
        
-  }
+}
   
 .search-wrapper img {
     left: 16px;
     top: 10px;
     position: absolute;
-  } 
+} 
   
   
 
@@ -167,46 +166,24 @@ header {
     position: absolute;
     top: 450px;
     background: #2F2105;
-    /* box-shadow: 0px 4px 32px rgba(223, 195, 124, 0.25); */
+    box-shadow: 0px 4px 32px rgba(223, 195, 124, 0.25);
     border-radius: 33px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 10px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 14px;
   
 }
 
 
-.order-now-button input {
-    
-    background: #2F2105;
-    position: absolute;
-    left: 32px;
-    top: 12px;
-    color: #FFFFFF;
-
-    font-weight: 600;
-    font-size: 14px;
-    /* line-height: 21px; */
-    border: none;
-    width: 74px;
-    height: 21px;           
-}
-
-.order-now-button input::placeholder {
-    color: white;
-}
-
-.order-now-button img {
-    width: 26px;
-    height: 26px;
-    position: relative;
-    left: 45px;   
-}
-
 
 .more-menu-link {
+
+    
     position: absolute;
     left: 400px;
     top: 460px;
@@ -219,8 +196,6 @@ header {
     text-decoration: none;
 
 }
-
-
 
 
 .section-caption {
@@ -403,7 +378,6 @@ header {
 
 .about-us p {
     margin: 0px;
-
     font-weight: 400;
     font-size: 18px;
     line-height: 27px;
@@ -429,27 +403,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-   
-    /* top: 140px; */
-
-
-
-
-}
-
-.get-coffee-button input {
-
-    background: #2F2105;
-    border: none;
-
-    width: 94px;
-    height: 18px;
+    color: #F4AE26;
     font-weight: 700;
     font-size: 12px;
-    line-height: 18px;
-    color: #F4AE26
     
+   
 }
+
 
 .subscribe-container{
     display: flex;
