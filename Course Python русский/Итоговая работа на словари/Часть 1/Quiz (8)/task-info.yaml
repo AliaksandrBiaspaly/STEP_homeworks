@@ -1,0 +1,19 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: None
+- text: 409
+- text: "False"
+- text: 520
+- text: произойдет ошибка (KeyError) во время выполнения программы
+- text: 153
+files:
+- name: task.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz
