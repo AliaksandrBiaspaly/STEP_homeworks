@@ -1,3 +1,0 @@
-text = 'footballcyberpunkextraterritorialityconversationalistblockophthalmoscopicinterdependencemamauserfff'
-
-result = {}
