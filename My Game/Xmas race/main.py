@@ -1,14 +1,19 @@
-import pygame
 import sys  # for exit
 import random
-import datetime
+from datetime import datetime
 
-from Functions import message_display, button, text_objects, things, car, car2, things_dodged, things2
+from Files.Functions import message_display, button, text_objects, things, car, car2, things_dodged, things2
 from constant import *
 
 # стартуем в файле модули пайгейм
 pygame.init()
 pygame.mixer.init()
+
+def get_time_now():
+    time_now = datetime.now().time()
+    date_now = datetime.now().date()
+
+    return f'время {time_now} \ дата {date_now}'
 
 
 def game_intro():
@@ -41,31 +46,40 @@ def game_intro():
 def crash():
     crash_sound.play()
     race_sound.stop()
+    with open('crashfile.txt', 'w+', encoding='utf8') as file:
+        file.write(get_time_now())
     message_display('RED CAR CRASHED!')
-
 
 
 def crash_out():
     crash_sound.play()
     race_sound.stop()
+    with open('crashfile.txt', 'w+', encoding='utf8') as file:
+        file.write(get_time_now())
     message_display('RED CAR OUT!')
 
 
 def crash2():
     crash_sound.play()
     race_sound.stop()
+    with open('crashfile.txt', 'w+', encoding='utf8') as file:
+        file.write(get_time_now())
     message_display('POLICE LOOSER!')
 
 
 def crash_girls():
     crash_sound.play()
     race_sound.stop()
+    with open('crashfile.txt', 'w+', encoding='utf8') as file:
+        file.write(get_time_now())
     message_display("GIRLS GO TO THE HOSPITAL")
 
 
 def crash2_out():
     crash_sound.play()
     race_sound.stop()
+    with open('crashfile.txt', 'w+', encoding='utf8') as file:
+        file.write(get_time_now())
     message_display('POLICE OUT !')
 
 
@@ -157,6 +171,10 @@ def game_loop():
         car2(x1, y1)
         things_dodged(dodged)
 
+        #score.append(dodged)
+        #print(score)
+
+
         # задаем границы
         if x > display_width - car_width or x < 0:
             gameExit = True
@@ -181,27 +199,27 @@ def game_loop():
 
         # условия для столкновений с камнями чтобы работали
         if y < thing_starty + thing_height:
-            print('y crossover')  # для проверки условия для себя принтим
+            #print('y crossover')  # для проверки условия для себя принтим
 
             if x > thing_startx and x < thing_startx + thing_width or x + car_width > thing_startx and x + car_width < thing_startx + thing_width:
                 print('x crossover')
                 crash()
         if y < thing2_starty + thing2_height:
-            print('y crossover')  # для проверки условия для себя принтим
+            #print('y crossover')  # для проверки условия для себя принтим
 
             if x > thing2_startx and x < thing2_startx + thing2_width or x + car_width > thing2_startx and x + car_width < thing2_startx + thing2_width:
                 print('x crossover')
-                crash()
+                crash_girls()
 
         if y1 < thing_starty + thing_height:
-            print('y1 crossover')  # для проверки условия для себя принтим
+            #print('y1 crossover')  # для проверки условия для себя принтим
 
             if x1 > thing_startx and x1 < thing_startx + thing_width or x1 + car2_width > thing_startx and x1 + car2_width < thing_startx + thing_width:
                 print('x1 crossover')
                 crash2()
 
         if y1 < thing2_starty + thing2_height:
-            print('y1 crossover')  # для проверки условия для себя принтим
+            #print('y1 crossover')  # для проверки условия для себя принтим
 
             if x1 > thing2_startx and x1 < thing2_startx + thing2_width or x1 + car2_width > thing2_startx and x1 + car2_width < thing2_startx + thing2_width:
                 print('x1 crossover')

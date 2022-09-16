@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: 13
+- text: 27
+- text: '<code>IndexError: list index out of range</code>'
+- text: 5
+files:
+- name: task.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+status: Unchecked
+record: -1

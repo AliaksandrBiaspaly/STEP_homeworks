@@ -16,7 +16,7 @@ display.set_caption("Xmas race")  # название
 # цвета
 # Colors used in project
 black = (0, 204, 204)
-white = (238, 204, 204)
+white = (108, 130, 133)
 red = (255, 0, 0)
 green = (0, 200, 0)
 bright_green = (255, 0, 0)
@@ -26,7 +26,7 @@ bright_red = (255, 0, 0)
 clock = time.Clock()
 
 # player1
-carImg = image.load('Image/red car.png')
+carImg = image.load('Image/red-car.png')
 carImg = transform.scale(carImg, (60, 100))
 car_width = 60
 

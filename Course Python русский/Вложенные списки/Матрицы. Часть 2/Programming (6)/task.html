@@ -1,0 +1,63 @@
+<html>
+ <head></head>
+ <body>
+  <h2 style="text-align: center;">Поворот матрицы</h2> 
+  <p>Напишите программу, которая поворачивает&nbsp;квадратную&nbsp;матрицу&nbsp;чисел на $90^{\circ}$&nbsp;по часовой стрелке.</p> 
+  <p><strong>Формат входных данных</strong><br> На вход программе&nbsp;подаётся натуральное&nbsp;число $n$&nbsp;— количество строк и столбцов в матрице, затем&nbsp;элементы матрицы&nbsp;построчно через пробел.</p> 
+  <p><strong>Формат выходных данных</strong><br> Программа должна вывести&nbsp;результат на экран,&nbsp;числа должны быть разделены&nbsp;одним пробелом.</p> 
+  <details>
+   <summary>Тестовые данные 🟢</summary> 
+   <table align="center" border="1" cellpadding="1" cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <th style="text-align: center;">Номер теста</th> 
+      <th style="text-align: center;">Входные данные</th> 
+      <th style="text-align: center;">Выходные данные</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align: center;">1</td> 
+      <td style="text-align: center;">3<br> 1 2 3<br> 4 5 6<br> 7 8 9</td> 
+      <td style="text-align: center;">7 4 1&nbsp;<br> 8 5 2&nbsp;<br> 9 6 3&nbsp;</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align: center;">2</td> 
+      <td style="text-align: center;">4<br> 1 9 4 2<br> 3 8 1 5<br> 6 7 4 6<br> 1 9 7 8</td> 
+      <td style="text-align: center;">1 6 3 1<br> 9 7 8 9<br> 7 4 1 4<br> 8 6 5 2</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align: center;">3</td> 
+      <td style="text-align: center;">2<br> 1 2<br> 3 4</td> 
+      <td style="text-align: center;">3 1<br> 4 2</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align: center;">4</td> 
+      <td style="text-align: center;">5<br> 1 2 3 4 5<br> 6 7 8 1 2<br> 3 4 9 5 6<br> 7 8 1 2 3<br> 4 5 6 7 8</td> 
+      <td style="text-align: center;">4 &nbsp;7 &nbsp;3 &nbsp;6 &nbsp;1<br> 5 &nbsp;8 &nbsp;4 &nbsp;7 &nbsp;2<br> 6 &nbsp;1 &nbsp;9 &nbsp;8 &nbsp;3<br> 7 &nbsp;2 &nbsp;5 &nbsp;1 &nbsp;4<br> 8 &nbsp;3 &nbsp;6 &nbsp;2 &nbsp;5</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align: center;">5</td> 
+      <td style="text-align: center;">7<br> 1 2 3 4 3 2 1<br> 9 8 0 7 0 6 3<br> 2 3 9 8 5 4 7<br> 9 8 6 7 4 3 2<br> 1 2 3 4 5 6 7<br> 9 8 7 6 5 4 3<br> 0 9 8 7 0 2 4</td> 
+      <td style="text-align: center;">0 &nbsp;9 &nbsp;1 &nbsp;9 &nbsp;2 &nbsp;9 &nbsp;1<br> 9 &nbsp;8 &nbsp;2 &nbsp;8 &nbsp;3 &nbsp;8 &nbsp;2<br> 8 &nbsp;7 &nbsp;3 &nbsp;6 &nbsp;9 &nbsp;0 &nbsp;3<br> 7 &nbsp;6 &nbsp;4 &nbsp;7 &nbsp;8 &nbsp;7 &nbsp;4<br> 0 &nbsp;5 &nbsp;5 &nbsp;4 &nbsp;5 &nbsp;0 &nbsp;3<br> 2 &nbsp;4 &nbsp;6 &nbsp;3 &nbsp;4 &nbsp;6 &nbsp;2<br> 4 &nbsp;3 &nbsp;7 &nbsp;2 &nbsp;7 &nbsp;3 &nbsp;1</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align: center;">6</td> 
+      <td style="text-align: center;">6<br> 0 9 8 7 6 5<br> 4 3 2 1 0 9<br> 8 7 6 5 4 3<br> 1 2 3 4 5 6<br> 8 9 0 1 2 3<br> 6 7 5 4 8 3</td> 
+      <td style="text-align: center;">6 &nbsp;8 &nbsp;1 &nbsp;8 &nbsp;4 &nbsp;0<br> 7 &nbsp;9 &nbsp;2 &nbsp;7 &nbsp;3 &nbsp;9<br> 5 &nbsp;0 &nbsp;3 &nbsp;6 &nbsp;2 &nbsp;8<br> 4 &nbsp;1 &nbsp;4 &nbsp;5 &nbsp;1 &nbsp;7<br> 8 &nbsp;2 &nbsp;5 &nbsp;4 &nbsp;0 &nbsp;6<br> 3 &nbsp;3 &nbsp;6 &nbsp;3 &nbsp;9 &nbsp;5</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align: center;">7</td> 
+      <td style="text-align: center;">3<br> 7 12 6<br> 87 1 16<br> 7 76 1</td> 
+      <td style="text-align: center;">7 &nbsp;87 7<br> 76 1 &nbsp;12<br> 1 &nbsp;16 6</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align: center;">8</td> 
+      <td style="text-align: center;">1<br> 1</td> 
+      <td style="text-align: center;">1</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </details>
+ </body>
+</html><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">3<br>1 2 3<br>4 5 6<br>7 8 9</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">7 4 1 <br>8 5 2 <br>9 6 3 </code></pre><br><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">4<br>1 9 4 2<br>3 8 1 5<br>6 7 4 6<br>1 9 7 8</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">1 6 3 1<br>9 7 8 9<br>7 4 1 4<br>8 6 5 2</code></pre><br><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">2<br>1 2<br>3 4</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">3 1<br>4 2</code></pre><br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 15 seconds</font><br><br>

@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: все ключи в словаре должны быть уникальными
+- text: словари могут содержать словари в качестве ключей элементов
+- text: словари могут содержать словари в качестве значений элементов
+- text: словари изменяемы
+- text: все ключи в словаре должны быть одного типа
+- text: доступ к элементам словаря осуществляется по их индексам
+- text: доступ к элементам словаря осуществляется по их ключам
+files:
+- name: task.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

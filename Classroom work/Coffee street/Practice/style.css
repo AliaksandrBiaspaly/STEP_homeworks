@@ -1,0 +1,108 @@
+html {
+    font-family: Poppins, sans-serif;
+}
+
+
+.content-wrapper{
+    width:80%;
+    margin: 0 auto;
+}
+
+.header-section {
+    height: 100vh;
+    /* background-image: url(../Practice/bg_img_hero.png); */
+
+    background-color:rgba(246, 235, 218, 1) ;
+}
+
+body {
+    margin: 0;
+}
+
+.right-top-image { 
+    position: absolute;
+    top: -34px;
+    right: -50px;
+
+}
+
+.left-bottom-image { 
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+}
+
+.logo-coffee{
+    background-image: url(../Practice/Image/logo_coffe.svg);
+}
+
+.search-button {
+
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.guide-item {
+    text-align: center;
+
+}
+
+.guide-item h3 {
+   
+    font-weight: 600;
+    font-size: 24px;
+	line-height: 36px;
+    letter-spacing: 0.04em;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: #2F2105;
+}
+
+.guide-item span {
+    
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #2F2105;   
+    letter-spacing: 0.04em;
+    
+
+}
+
+.delivery {
+    padding-bottom: 72px;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+}
+
+.menu-item {
+    border-radius: 12px;
+    padding: 24px 18px;
+    box-shadow: 0px 6px 16px ;
+
+}
+
+.menu-h3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-menu {}
+   
+.menu-button {
+    border: none;
+    background-image:url(/Practice/Image/Frame\ 5.svg)
+    back
+
+    
+}
